@@ -8,7 +8,7 @@ if($vascoGanharQuinta == true){
     echo "Eu ficarei muito, muito puto!";
 }
 
-echo '<br><br>'
+echo '<br><br>';
 
 $idade = 20;
 
@@ -18,7 +18,7 @@ if($idade >= 18){
     echo "Você não pode ingerir bebida alcoolica. SEU BBZÃO";
 }
 
-echo '<br><br>'
+echo '<br><br>';
 
 $temCarteira = true;
 
@@ -28,7 +28,7 @@ if($idade >= 18 && $temCarteira == true){
     echo "Você não pode dirigir no Brasil";
 }
 
-echo '<br><br>'
+echo '<br><br>';
     
 // Condicional usando o inversor lógico 
 if(!$temCarteira){
