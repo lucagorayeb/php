@@ -1,7 +1,9 @@
 <?php
     require 'constantes_ficha_cadastral.php';
     require 'data.php';
-
+    require 'functions.php';
+    
+    $salarioAnual = calculaSalarioAnual($salario_mensal);
     // Se está ou não empregado 
     $empregado = $esta_empregado == true ? 'Empregado' : 'Desempregado';
 
@@ -36,10 +38,10 @@
                 <p>Nome: <strong> <?= $nome; ?> </strong> </p>
                 <p>Idade:<strong> <?= $idade; ?> </strong> </p>
                 <p>Sexo: <strong> <?= $sexo; ?> </strong> </p>
-                <p>Salário Mensal: <strong> R$ <?= number_format($salario_mensal, 2, ',', '.'); ?> </strong> </p>
-                <p>Salário Anual: <strong> R$ <?= number_format($salario_mensal * 12, 2, ',', '.'); ?> </strong> </p>
+                <p>Salário Mensal: <strong> R$ <?= converteNumberToBRL($salario_mensal); ?> </strong> </p>
+                <p>Salário Anual: <strong> R$ <?= converteNumberToBRL($salarioAnual)?> </strong> </p>
                 <p>Status de Emprego: <strong> <?= $empregado;?> </strong> </p>
-                <p>Anos para a aposentadoria: <strong> <?= $idadeParaAposentar - $idade ?> </strong> </p>
+                <p>Anos para a aposentadoria: <strong> <?= calculaTempoParaAposentadoria($idade, $sexo) ?> </strong> </p>
                 <p>Habilidades: <strong> <?php
                     echo implode(", ", $habilidades);
                 ?> </strong> </p>
