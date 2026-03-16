@@ -1,8 +1,7 @@
 <?php
+session_start();
 
-delCookies(){
-    setcookie('login_cookie','',-1);
-    setcookie('wellcome_cookie','',-1);
-}
+unset($_SESSION['usuario']);
 
+header('location: index.php');
 ?>

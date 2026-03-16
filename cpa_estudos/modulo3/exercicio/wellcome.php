@@ -1,28 +1,37 @@
 <?php
+session_start();
 
-setcookie('wellcome_cookie', 'Wellcome to this web page');
+if(empty($_SESSION['usuario'])){
+    header('Location: index.php');
+    exit();
+}
 
-//include 'logout.php';
+$cor = '#eee';
+if(!empty($_COOKIE['tema'])){
+    $tema = $_COOKIE['tema'];
+
+    if($tema == 'claro'){
+        $cor = '#fff';
+    }else{
+        $cor = '#333';
+    }
+}
 
 ?>
 
 <!DOCTYPE html>
-<html lang=en>
+<html lang="en">
 <head>
-    <meta charset=UTF-8>
-    <meta name=viewport content=width=device-width, initial-scale=1.0>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wellcome Page</title>
 </head>
-<body>
-    <p> Bem vindo a páginas para quem logou</p> <br> <br>
-    <form>
-        <input type="submit" name"logout">
-        </input>
-            <?php 
- //               delCookies();
-                header("Location: http://localhost:8080/login.php");
-                exit();
-            ?>
-    </form>
+<body style="background-color: <?= $cor ?>">
+    <?php
+        echo "Bem vindo ".$_SESSION['usuario'];
+        echo "<br />";
+        echo '<a href = "logout.php"> Logout </a>';
+    ?>
 </body>
 </html>
+
