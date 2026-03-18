@@ -2,6 +2,13 @@
 
 // filesystem
 // f(algumacoisa) - file (arquivo)
+// read (ler) - r
+// write (escrever) - w
+// resource = recurso
+// eof = end of file (fim do arquivo);
+// fwrite - write (escrever)
+// truncar - truncate (truncar)
+// append - append (acrescentar)
 
 $arquivo = fopen("nome.txt", "r");
 $bytes = filesize("nome.txt");
