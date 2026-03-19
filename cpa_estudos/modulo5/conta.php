@@ -1,4 +1,4 @@
-<?php
+con<?php
 
 class Conta{
 
@@ -14,10 +14,22 @@ class Conta{
     }
 
     public function sacar(int $valor){
-        if($valor > $this->saldo){
-            echo "O cheque especial não pode ter um débito de mais de 100 reais.\n"; 
+        if($valor > $this->saldo && $this->chequeEspecial == false){
+            echo "Você não tem saldo suficiente.\n"; 
             return false;        
         }
+
+        if($valor > $this->saldo + 100 && $this->chequeEspecial == true){
+            echo "Você não pode sacar um valor maior do que o saldo + o cheque especial (100).\n"; 
+            return false;
+        }
+
+        if($valor <= $this->saldo + 100 && $this->chequeEspecial == true){
+            $this->saldo -= $valor;
+            echo 'Você sacou: '.$valor."\n";
+            return true;
+        }
+
         $this->saldo -= $valor;
         echo 'Você sacou: '.$valor."\n";
     }
@@ -31,8 +43,23 @@ class Conta{
         }
     }
 
+    public function verSaldo(){
+        echo $this->saldo;
+    }
+
 }
 
 $conta1 = new Conta(500);
-$conta1->sacar(600);
+echo 'Saldo Inicial: '.$conta1->verSaldo()."\n";
+$conta1->sacar(700);
+$conta1->verSaldo();
+
+echo "\n\n\n";
+
+$conta2 = new Conta(500, true);
+echo 'Saldo Inicial: '.$conta2->verSaldo()."\n";
+$conta2->sacar(550);
+$conta2->verSaldo();
+
+echo "\n";
 ?>
