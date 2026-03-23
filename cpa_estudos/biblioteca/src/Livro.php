@@ -7,10 +7,7 @@ class Livro{
     // Atributos privados
     private bool $disponivel = false;
 
-    public function __construct(private string $autor, private string $titulo){
-        $this->autor = $autor;
-        $this->titulo = $titulo;
-    }
+    public function __construct(private string $autor, private string $titulo){}
 
     // Metodos de ação
 
