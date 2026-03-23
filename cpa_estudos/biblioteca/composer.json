@@ -1,0 +1,10 @@
+{
+    "name": "luca/biblioteca",
+    "description": "Biblioteca POO",
+    "autoload": {
+        "psr-4": {
+            "luca\\biblioteca\\": "src/"
+        }
+    },
+    "require": {}
+}
