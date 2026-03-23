@@ -12,8 +12,9 @@ abstract class Usuario{
     abstract function podePegarEmprestado() : bool;
 
     public function adicionarLivroEmprestado(Livro $livro) : void{
-        $this->livrosEmprestados[] = $livro;
-
+        if($this -> podePegarEmprestado()){
+            $this->livrosEmprestados[] = $livro;
+        }
     }
 
     public function removerLivroEmprestado(Livro $livro) : void{

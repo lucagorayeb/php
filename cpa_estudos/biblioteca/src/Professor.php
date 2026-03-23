@@ -1,8 +1,8 @@
 <?php
 namespace luca\biblioteca;
 
-class Aluno extends Usuario{
-    private const MAX_LIVROS_EMPRESTADOS = 1;
+class Professor extends Usuario{
+    private const MAX_LIVROS_EMPRESTADOS = 3;
 
     public function podePegarEmprestado() : bool{
         return count($this->livrosEmprestados) < self::MAX_LIVROS_EMPRESTADOS;
