@@ -1,0 +1,15 @@
+{
+    "name": "luca/dinner",
+    "autoload": {
+        "psr-4": {
+            "luca\\dinner\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Luca Siqueira Assis Gorayeb de Mello",
+            "email": "lucagorayeb@gmail.com"
+        }
+    ],
+    "require": {}
+}

@@ -55,7 +55,7 @@ echo '</pre>';
 $frutas = ['Pera','Uva','Laranja'];
 
 // array_push() - Adiciona valores a um array
-echo "array_push():  Adiciona valores a um array";
+echo "array_push(): Adiciona valores a um array";
 array_push($frutas, 'Banana');
 
 echo '<pre>';
