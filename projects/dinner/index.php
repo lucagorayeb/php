@@ -19,7 +19,14 @@ echo "<pre>";
 print_r($cardapio->listarProdutos());
 
 $pedido = new Pedido();
-print_r($pedido->listarPedido());
+
 $pedido->adicionarPedido($produto1, 2);
+
+$pedido->adicionarPedido($produto2, 3);
+
 print_r($pedido->listarPedido());
+
+$pedido->removerPedido($produto2, 3);
+print_r($pedido->listarPedido());
+
 ?>
