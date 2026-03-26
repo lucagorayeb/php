@@ -17,6 +17,7 @@ class ComposerStaticInita49eddb209ac4fa64a113c3d168345b2
         'luca\\dinner\\' =>
         array (
             0 => __DIR__ . '/../..' . '/src',
+            1 => __DIR__ . '/../..' . '/src/classes',
         ),
     );
 

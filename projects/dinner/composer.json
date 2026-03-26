@@ -1,9 +1,7 @@
 {
     "name": "luca/dinner",
     "autoload": {
-        "psr-4": {
-            "luca\\dinner\\": "src/"
-        }
+        "psr-4": {"luca\\dinner\\": ["src/", "src/classes"]}
     },
     "authors": [
         {

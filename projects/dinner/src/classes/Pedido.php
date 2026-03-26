@@ -2,15 +2,15 @@
 namespace luca\dinner;
 
 class Pedido{
-    private float $totalPagar;
-    private array $pedidos = [];
-    private int $quantidadeItens;
+    protected float $totalPagar;
+    protected array $pedidos = [];
+    protected int $quantidadeItens;
 
     public function adicionarPedido(Produto $produto, $quantidadeItens = 1){
         $this->pedidos[$produto->getNome()] = [
             "Preço" => $produto->getPreco(), 
             "Quantidade" => $this->quantidadeItens = $quantidadeItens, 
-            "Total a pagar " => $this->quantidadeItens * $produto->getPreco()
+            "Total" => $this->quantidadeItens * $produto->getPreco()
         ];
     }
 
@@ -31,15 +31,45 @@ class Pedido{
             return $this->pedidos[$produto->getNome()] = [
                 "Preço" => $produto->getPreco(),
                 "Quantidade" => "Item Removido",
-                "Total a pagar " => 0.00
+                "Total" => 0.00
             ];
         }else{
             return $this->pedidos[$produto->getNome()] = [
                 "Preço" => $produto->getPreco(),
                 "Quantidade" => $this->quantidadeItens = $valueItem,
-                "Total a pagar " => $this->totalPagar = $valueItem * $produto->getPreco()
+                "Total" => $this->totalPagar = $valueItem * $produto->getPreco()
             ];
         }
     }
+
+    public function finalizarPedido() : float{
+            $this->calculaPagarPedido();
+            return $this->getTotalPagar();
+    }
+
+    public function alterarPedido(){
+        return null;
+    }
+
+     public function getTotalPagar() : float{
+        return $this->totalPagar;
+    }
+
+    private function setTotalPagar($valor) : void{
+        $this->totalPagar = $valor;
+    }
+
+    public function calculaPagarPedido() : void{
+        $valor;
+        foreach($this->pedidos as $pedido){
+            foreach($pedido as $key => $value){
+                if($key == "Total"){
+                    $valor += $value;
+                }
+            }
+        }
+        $this->setTotalPagar($valor);
+    }
+
 }
 ?>

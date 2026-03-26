@@ -18,8 +18,8 @@ class Produto{
         return $this->preco;
     }
 
-    public function setPreco(float $newPreco){
-        $this->preco = $newPreco;
+    public function setPreco(float $novoPreco){
+        $this->preco = $novoPreco;
     }
 }   
 
