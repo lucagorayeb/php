@@ -5,16 +5,20 @@ use luca\dinner\Produto;
 use luca\dinner\Cardapio;
 use luca\dinner\Pedido;
 use luca\dinner\Cliente;
+use luca\dinner\Cli;
 
 $pao = new Produto("Pão", 2.50);
 $leite = new Produto("Leite", 3.50);
 
+
 $cardapio = new Cardapio();
 $cardapio->adicionarProduto($pao);
-$cardapio->adicionarProduto($leite);
+$cardapio->adicionarProduto($leite);/*
 echo "<pre>";
 print_r($cardapio->listarProdutos());
 echo "<br>";
+*/
+
 //$cardapio->removerProduto($produto1);
 //echo "<pre>";
 //print_r($cardapio->listarProdutos());
@@ -30,12 +34,14 @@ echo "<br>";
 //$pedido->removerPedido($produto2, 3);
 //print_r($pedido->listarPedido());
 
+/*
 $cliente = new Cliente("Luca");
 print_r($cliente->verCardapio($cardapio));
 $cliente->fazerPedido($pao, 3);
 $cliente->fazerPedido($leite, 2);
 $cliente->pagarPedido();
 echo "<br>";
+*/
 
 /*
 $pedido = new Pedido();
@@ -46,8 +52,11 @@ $pedido->calculaPagarPedido();
 echo $pedido->getTotalPagar();
 */
 
+$cli = new Cli();
+$cli->apresentacao();
 
-
+//$cliente = new Cliente("Luca");
+//print_r($cliente->verCardapio($cardapio));
 
 
 ?>

@@ -47,10 +47,6 @@ class Pedido{
             return $this->getTotalPagar();
     }
 
-    public function alterarPedido(){
-        return null;
-    }
-
      public function getTotalPagar() : float{
         return $this->totalPagar;
     }

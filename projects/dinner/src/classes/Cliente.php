@@ -16,20 +16,30 @@ class Cliente extends Usuario{
         return false;
     }
 
-    public function fazerPedido(Produto $produto, $quantidadeItens){
+    public function podeAlterarPrecoProduto() : bool{
+        return false;
+    }
+
+    public function fazerPedido(Produto $produto, $quantidadeItens) : void{
         $this->pedido->adicionarPedido($produto, $quantidadeItens);
-        echo "O produto ".$produto->getNome()." foi adicionado<br>";
+        $this->mostrarMensagem(true, $produto);
     }
 
-    public function removerPedido(Produto $produto, $quantidadeItens){
+    public function removerPedido(Produto $produto, $quantidadeItens) : void{
         $this->pedido->removerPedido();
-        echo "O produto ".$produto->getNome()." foi removido<br>";
+        $this->mostrarMensagem(false, $produto);
     }
 
-    public function pagarPedido(){
+    public function pagarPedido() : void{
         echo "O total a pagar pelo seu pedido é R$ ".$this->pedido->finalizarPedido();
     }
 
-
+    private function mostrarMensagem(bool $sucesso, Produto $produto) : void{
+        if($sucesso){
+                echo "O produto ".$produto->getNome()." foi adicionado<br>";
+        }else{
+                echo "O produto ".$produto->getNome()." foi removido<br>";
+        }
+    }
 }
 ?>
