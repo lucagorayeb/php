@@ -1,0 +1,7 @@
+Padrão de Arquitetura de Software com separação de aplicação em 3 camadas
+
+MODEL      (M) - Cuida da manipulção dos dados.
+
+VIEW       (V) - Interação do usuário.
+
+CONTROLLER (C) - Camada de controle.
