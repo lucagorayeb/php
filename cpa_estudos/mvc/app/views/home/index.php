@@ -12,7 +12,7 @@
 <body>
     <h1>Home</h1>
     <p> Está é a página inicial</p>
-    <p> O meu nome é: <?php echo $viewData['nome']?></p>
-    <p> A minha idade é: <?php echo $viewData['idade']?> </p>
+    <p> O meu nome é: <?php echo $nome?></p>
+    <p> A minha idade é: <?php echo $idade?> </p>
 </body>
 </html>
