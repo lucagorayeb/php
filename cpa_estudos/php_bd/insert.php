@@ -4,7 +4,7 @@ require_once 'connection.php';
 
 $sql = 'INSERT INTO usuarios(username, name, password) VALUES (:username, :name, :password)';
 
-$stmt = $pdo->prepare($sql);
+
 
 $_name = 'Luca Siqueira Assis';
 $_username = 'luca102';
