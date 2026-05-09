@@ -1,0 +1,11 @@
+| Order |     File                                                             | Why
+--------------------------------------------------------------------------------------------------------
+|     1     | HttpFoundation/Request.php             ->        Understand incoming HTTP
+|     2     | HttpFoundation/Response.php          ->         Understand outgoing HTTP
+|     3     | HttpKernel/HttpKernel.php                 ->        Core application flow
+|     4     | HttpKernel/ControllerResolver.php    ->         How controllers are found
+|     5     | HttpKernel/ArgumentResolver.php    ->         How params are injected
+|     6     | Routing/Router.php                           ->          URL → Controller
+|     7     | Routing/Route.php                            ->          Route definition
+|     8     | DependencyInjection/Container.php ->          How services are stored
+|     9     | DependencyInjection/ContainerBuilder.php -> How services are built
